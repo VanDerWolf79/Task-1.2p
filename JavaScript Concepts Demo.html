@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Concepts Demo</title>
+</head>
+<body>
+    <h1>JavaScript Concepts Implementation</h1>
+
+    <h2>a. String Methods</h2>
+    <p id="stringMethods"></p>
+
+    <h2>b. Number Methods</h2>
+    <p id="numberMethods"></p>
+
+    <h2>c. Array Methods</h2>
+    <p id="arrayMethods"></p>
+
+    <h2>d. Date Methods</h2>
+    <p id="dateMethods"></p>
+
+    <h2>e. Function Methods</h2>
+    <button id="functionMethodButton">Click me!</button>
+    <p id="functionMethodResult"></p>
+
+    <script>
+        // a. String Methods
+        const string = "Hello, World!";
+        const stringMethodsResult = `
+            Length: ${string.length}
+            Uppercase: ${string.toUpperCase()}
+            Lowercase: ${string.toLowerCase()}
+            Substring: ${string.substring(0, 5)}
+            Replace: ${string.replace("World", "Universe")}
+        `;
+        document.getElementById("stringMethods").textContent = stringMethodsResult;
+
+        // b. Number Methods
+        const number = 42.56789;
+        const numberMethodsResult = `
+            To Fixed (2 decimals): ${number.toFixed(2)}
+            Integer Value: ${Math.floor(number)}
+            Absolute Value: ${Math.abs(number)}
+            Exponential Notation: ${number.toExponential(2)}
+            Square Root: ${Math.sqrt(number)}
+        `;
+        document.getElementById("numberMethods").textContent = numberMethodsResult;
+
+        // c. Array Methods
+        const numbersArray = [1, 2, 3, 4, 5];
+        const stringsArray = ["apple", "banana", "cherry", "date", "fig"];
+        const arrayMethodsResult = `
+            Array Length: ${numbersArray.length}
+            Push 6: ${numbersArray.concat(6)}
+            Pop: ${numbersArray.slice(0, -1)}
+            Join with Comma: ${stringsArray.join(", ")}
+            Index of "cherry": ${stringsArray.indexOf("cherry")}
+            Last Element: ${numbersArray[numbersArray.length - 1]}
+            Removed Element: ${numbersArray.splice(2, 1)}
+            Reversed Array: ${numbersArray.slice().reverse()}
+        `;
+        document.getElementById("arrayMethods").textContent = arrayMethodsResult;
+
+        // d. Date Methods
+        const now = new Date();
+        const dateMethodsResult = `
+            Current Date: ${now.toDateString()}
+            Current Time: ${now.toTimeString()}
+            Full Date String: ${now.toString()}
+            Day of the Week: ${now.getDay()}
+            Milliseconds since 1970: ${now.getTime()}
+        `;
+        document.getElementById("dateMethods").textContent = dateMethodsResult;
+
+        // e. Function Methods
+        const functionMethodButton = document.getElementById("functionMethodButton");
+        const functionMethodResult = document.getElementById("functionMethodResult");
+
+        functionMethodButton.addEventListener("click", function () {
+            alert("Function method example: Button clicked!");
+            functionMethodResult.textContent = "Button clicked!";
+        });
+        
+        function greet(name) {
+            return `Hello, ${name}!`;
+        }
+
+        functionMethodResult.textContent = greet("John");
+    </script>
+</body>
+</html>
